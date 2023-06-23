@@ -7,11 +7,17 @@ type State = {
     isLoggedIn: boolean;
     user: User | null;
     token: string | null;
+    session: string | null;
   };
 };
 
 type Actions = {
-  setSession: (isLoggedIn: boolean, user: User, token: string) => void;
+  setSession: (
+    isLoggedIn: boolean,
+    user: User,
+    token: string,
+    session: string
+  ) => void;
   clearSession: () => void;
 };
 
@@ -22,23 +28,26 @@ const useAuthStore = create(
         isLoggedIn: false,
         user: null,
         token: null,
+        session: null,
       },
-      setSession: (isLoggedIn, user, token) =>
+      setSession: (isLoggedIn, user, token, session) =>
         set(() => ({
           session: {
             isLoggedIn,
             user,
             token,
+            session,
           },
         })),
       clearSession: () =>
-        set({
+        set(() => ({
           session: {
             isLoggedIn: false,
             user: null,
             token: null,
+            session: null,
           },
-        }),
+        })),
     }),
     {
       name: 'app-session',
@@ -48,9 +57,9 @@ const useAuthStore = create(
 
 export const getTokenFromStore = () => {
   const {
-    session: { token },
+    session: { token, session },
   } = useAuthStore.getState();
-  return token;
+  return { token, session };
 };
 
 export default useAuthStore;

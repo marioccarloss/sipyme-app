@@ -8,7 +8,7 @@ export default function Logo() {
       className="flex items-center gap-2 text-2xl font-extrabold text-gray-900"
     >
       <img src={logo} alt="SiPyme" className="w-6" />
-      <span>SiPyme</span>
+      <span className="hidden sm:block">SiPymes</span>
     </Link>
   );
 }

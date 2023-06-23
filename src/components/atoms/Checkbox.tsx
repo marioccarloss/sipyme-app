@@ -27,7 +27,7 @@ export default function Checkbox({
           {...props}
         />
       </div>
-      <div className="ml-3 text-sm">
+      <div className="ml-1 text-sm">
         <label htmlFor="remember" className="text-gray-500">
           {label}
         </label>

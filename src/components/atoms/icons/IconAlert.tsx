@@ -5,11 +5,11 @@ type Props = {
 export default function IconAlert({ className = '', ...props }: Props) {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
       className={`w-6 h-6 ${className !== undefined ? className : ''}`}
       {...props}
     >

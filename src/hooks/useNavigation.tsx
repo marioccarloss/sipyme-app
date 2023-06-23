@@ -3,9 +3,10 @@ import IconFiles from 'components/atoms/icons/IconFiles';
 import IconSettings from 'components/atoms/icons/IconSettings';
 import IconFolder from 'components/atoms/icons/IconFolter';
 import IconUsers from 'components/atoms/icons/IconUser';
+import { Navigation } from 'types/Navigation';
 
 export default function useNavigation() {
-  const navigation = [
+  const navigation: Navigation[] = [
     {
       id: 1,
       name: 'Dashboard',
@@ -48,7 +49,7 @@ export default function useNavigation() {
     },
     {
       id: 6,
-      name: 'Ingresos/Egresos',
+      name: 'Ingresos / Egresos',
       link: '/providers',
       icon: (
         <IconFolder className="text-gray-500 duration-75 group-hover:text-black" />
@@ -57,10 +58,16 @@ export default function useNavigation() {
     {
       id: 7,
       name: 'Inventario',
-      link: '/inventory',
       icon: (
         <IconFiles className="text-gray-500 duration-75 group-hover:text-black" />
       ),
+      sub: [
+        {
+          id: 7.1,
+          name: 'Productos y Servicios',
+          link: '/services',
+        },
+      ],
     },
     {
       id: 8,

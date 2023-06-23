@@ -12,7 +12,7 @@ export default function Label({
   return (
     <label
       htmlFor={htmlFor}
-      className={`block mb-2 text-sm font-medium text-gray-900 ${
+      className={`block mb-1 text-sm font-medium text-gray-900 ${
         className !== undefined ? className : ''
       }`}
     >

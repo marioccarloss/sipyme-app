@@ -1,8 +1,11 @@
 import Root from 'components/templates/Root';
-import Error from 'components/templates/Error';
 import Protected from 'components/atoms/Protected';
-import Login from 'components/pages/Login';
-import Dashboard from 'components/pages/Dashboard';
+import Signin from 'components/pages/Signin';
+import Signup from 'components/pages/Signup';
+import Services from 'components/pages/Services';
+import Home from 'components/pages/Home';
+import Error from 'components/templates/Error';
+import ErrorPage from 'components/pages/Error';
 
 export default function useRoutes() {
   const routes = [
@@ -15,13 +18,29 @@ export default function useRoutes() {
           path: '/',
           element: (
             <Protected>
-              <Dashboard />
+              <Home />
             </Protected>
           ),
         },
         {
-          path: 'login',
-          element: <Login />,
+          path: 'services',
+          element: (
+            <Protected>
+              <Services />
+            </Protected>
+          ),
+        },
+        {
+          path: 'signin',
+          element: <Signin />,
+        },
+        {
+          path: 'signup',
+          element: <Signup />,
+        },
+        {
+          path: '*',
+          element: <ErrorPage />,
         },
       ],
     },

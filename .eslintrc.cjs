@@ -23,5 +23,6 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/jsx-props-no-spreading': 'off',
+    'eslint-disable-next-line no-nested-ternary': 'off',
   },
 };

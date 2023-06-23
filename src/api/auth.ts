@@ -1,8 +1,21 @@
 import axios from 'axios';
-import { LoginData } from 'types/LoginData';
+import {
+  SigninData,
+  SignupStep1,
+  SignupStep2,
+  SignupStep3,
+} from 'types/AuthData';
 
-const loginRequest = async (data: LoginData) => {
+export const signinRequest = async (data: SigninData) => {
   return axios.post(`${import.meta.env.VITE_API_URL}/api/auth/sign_in`, data);
 };
 
-export default loginRequest;
+export const signupRequest = async (
+  data: SignupStep1 | SignupStep2 | SignupStep3,
+  step: number
+) => {
+  return axios.post(
+    `${import.meta.env.VITE_API_URL}/api/auth/sign_up?step=${step}`,
+    data
+  );
+};
