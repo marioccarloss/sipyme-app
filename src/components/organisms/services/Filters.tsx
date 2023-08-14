@@ -4,6 +4,7 @@ import Label from 'components/atoms/Label';
 import Input from 'components/atoms/Input';
 import IconFilter from 'components/atoms/icons/IconFilter';
 import IconTools from 'components/atoms/icons/IconTools';
+import IconCopy from 'components/atoms/icons/IconCopy';
 
 export default function Filters() {
   const { filtersForm } = useFilters();
@@ -11,6 +12,7 @@ export default function Filters() {
   const [isOpenAction, setIsOpenAction] = useState(false);
   const FilterToggle = () => setIsOpenFilter(!isOpenFilter);
   const ActionsToggle = () => setIsOpenAction(!isOpenAction);
+  const CopyToggle = () => console.log('Copy');
 
   return (
     <div
@@ -33,6 +35,14 @@ export default function Filters() {
         >
           <IconTools />
           Acciones
+        </button>
+        <button
+          type="button"
+          className="bg-white text-gray-500 py-2.5 px-3 font-semibold items-center justify-center flex gap-1 rounded-lg ring-2 ring-gray-300 hover:text-gray-900 hover:bg-gray-100"
+          onClick={CopyToggle}
+        >
+          <IconCopy />
+          Copiar
         </button>
       </div>
 
@@ -107,14 +117,6 @@ export default function Filters() {
               className="px-3 py-2 text-sm hover:bg-gray-100 flex items-center gap-2 w-full"
             >
               Importar
-            </button>
-          </li>
-          <li className="hover:bg-gray-10">
-            <button
-              type="button"
-              className="px-3 py-2 text-sm hover:bg-gray-100 flex items-center gap-2 w-full"
-            >
-              Copiar
             </button>
           </li>
           <li className="hover:bg-gray-10">
